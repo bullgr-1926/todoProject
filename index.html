@@ -42,8 +42,9 @@
 
     <div class="row ">
       <div class="adding-task col-xs-10 col-sm-8 col-md-8 ml-2">
-          <input type="text" id="createToDoId" name="create-task" class="createToDoClass col-10"
-          placeholder="Add a task to your DoItRight">
+        <form class="todoForm">
+          <input type="text" name="create-task" class="todoInput col-10" placeholder="Add a task to your DoItRight">
+        </form>
       </div>
         <div class="col-xs-2 col-sm-4 col-md-4" >
           <button class="addButton col-4" type="submit"><img src="adding.png"></button>
@@ -53,15 +54,11 @@
    <!-- The todo-list starts here-->
    <div class="row todo-text">
      <div class="col-12"><h2>my DoItRight - List</h2></div>
-     <div id="list"></div>
    </div>
 
      <div class="row">
        <div class="col-12 todo-container">
-        <ul>
-          <li></li>
-
-        </ul>
+        <div id="list"></div>
         </div>
     </div>
 

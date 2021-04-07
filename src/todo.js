@@ -27,16 +27,60 @@ const newTodo = (task) => {
 }
 
 // Create the list on html
-const createList = (items, parent) => {
-    var ul = document.createElement('ul');
+const createList = () => {
+    // We use the div with class list
+    let parent = document.getElementById('list');
+    
+    // Remove any previous content
+    parent.innerHTML = '';
+
+    let ul = document.createElement('ul');
     parent.appendChild(ul);
 
-    items.forEach((item) => {
+    // Sort the array descending to id
+    todoList.sort((a, b) => b.id - a.id);
+    
+    todoList.forEach((item) => {
       let li = document.createElement('li');
       ul.appendChild(li);
       li.innerHTML = item.task;
     });
 }
+
+// Get the value from input fielt, trim it and if it's not empty,
+// add to the todo array and finaly reload the list
+const getInput = (input) => {
+    const task = input.value.trim();
+    
+    if (task !== '') {
+        newTodo(task);
+        createList();
+        input.value = '';
+        input.focus();
+  }
+}
+
+// Create submit event listener when the user
+// press enter on the form input field
+const todoForm = document.querySelector('.todoForm');
+todoForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const input = document.querySelector('.todoInput');
+
+  // Get the input field
+  getInput(input);  
+});
+
+// Create submit event listener when the user
+// press enter on the submit button
+const todoAddButton = document.querySelector('.addButton');
+todoAddButton.addEventListener('click', event => {
+  event.preventDefault();
+  const input = document.querySelector('.todoInput');
+
+  // Get the input field
+  getInput(input);  
+});
 
 // Array to keep all the todo entries
 let todoList = [];
@@ -44,8 +88,11 @@ let todoList = [];
 // Update the array (data from local storate or empty)
 getTodoData();
 
-// Send the array and parent name to create the list on html
-createList(todoList, document.getElementById('list'));
+// Create the list on html
+createList();
+
+
+
 
 // Set the todo data in local storage (fires up by event)
 //setTodoData();
