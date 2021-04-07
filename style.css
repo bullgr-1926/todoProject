@@ -24,6 +24,7 @@ body {
     border: 2px solid #8C9C88;
     border-radius: 10px 10px 10px 10px;
     height: 40px;
+    width: 80%;
     padding-left: 5%;
     padding-right: 5%;
     margin-left: 15%;
@@ -67,6 +68,12 @@ ul li {
     text-align: center;
     color: black;
 }
+.list-group {
+    background-color: #F2DBAE;
+}
+.list-group-item {
+    text-align: center;
+}
 
 
 
@@ -89,5 +96,10 @@ ul li {
         margin-left: 10%;
 
     }
+    .list-group {
+        position:relative;
+        margin-left: 5%;    
+    }
+ 
     
 }
