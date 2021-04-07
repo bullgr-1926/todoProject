@@ -2,31 +2,32 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family: monospace !important;
-    font-weight: normal;
+    font-family: Bradley Hand, cursive;
+    font-weight: 500;
+    font-style: cursive;
 }
 
 body {
-    background-color: white;
+    background-color: #F2DBAE;
     overflow-x: hidden;
     height: auto;
 }
 .welcome-text {
     align-content: center;
     text-align: center;
-    color: #8A86A6;
+    color: black;
     margin-top: 5%;
     margin-bottom: 5%;
     font-size: 6vw;
 }
 .adding-task input {
-    border: 2px solid #049DD9;
-    border-radius: 0px 0px 20px 20px;
+    border: 2px solid #8C9C88;
+    border-radius: 10px 10px 10px 10px;
     height: 40px;
     padding-left: 5%;
     padding-right: 5%;
     margin-left: 15%;
-    color: #8A86A6;
+    color: black;
     outline: none;
     outline: -webkit-focus-ring-color auto 0px;
 }
@@ -39,12 +40,22 @@ body {
     position: relative;
     height: 40px;
     width: 50px;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 10px 10px 10px 10px;
+    border: 2px solid #8C9C88;
+    background-size: cover;
+}
+.addButton:hover {
+    border: 2px solid #f22b27;
+}
+.addButton img{
+    width: 20px;
+    height: 20px;
+    background-size: cover;
 }
 .todo-text {
     align-content: center;
     text-align: center;
-    color: #8A86A6;
+    color: black;
     margin-top: 5%;
     margin-bottom: 5%;
     font-size: 6vw;
@@ -54,7 +65,7 @@ ul li {
 }
 .remember-text {
     text-align: center;
-    color: #8A86A6;
+    color: black;
 }
 
 
@@ -69,7 +80,7 @@ ul li {
     .todo-text {
         align-content: center;
         text-align: center;
-        color: #8A86A6;
+        color: black;
         margin-top: 15%;
         margin-bottom: 5%;
         font-size: 6vw;
