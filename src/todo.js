@@ -1,6 +1,5 @@
 // Todo object
 function Todo(task) {
-    this.id = Date.now();
     this.task = task;
     this.done = false;
 }
@@ -20,10 +19,10 @@ const setTodoData = () => {
     localStorage.setItem('todoData', JSON.stringify(todoList));
 }
 
-// Create a new todo entry and push it to array
+// Create a new todo entry and unshift it to array
 const newTodo = (task) => {
     let newTodo = new Todo(task);
-    todoList.push(newTodo);
+    todoList.unshift(newTodo);
 }
 
 // Create the list on html
@@ -37,9 +36,6 @@ const createList = () => {
     let ul = document.createElement('ul');
     parent.appendChild(ul);
 
-    // Sort the array descending to id
-    todoList.sort((a, b) => b.id - a.id);
-    
     todoList.forEach((item) => {
       let li = document.createElement('li');
       ul.appendChild(li);
@@ -82,6 +78,8 @@ todoAddButton.addEventListener('click', event => {
   getInput(input);  
 });
 
+//--------------------------------------
+
 // Array to keep all the todo entries
 let todoList = [];
 
@@ -121,7 +119,8 @@ createList();
 //}
 
 //newTodo("Arxidia kopanista");
+
+//setTodoData();
 // ---------------- Example entries ----------------
 
 console.log(todoList);
-console.log(todoList[0].id);
