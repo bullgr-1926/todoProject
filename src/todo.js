@@ -28,7 +28,7 @@ const newTodo = (task) => {
 // Create the list on html
 const createList = () => {
     // We use the div with class list
-    let parent = document.getElementById('list');
+    let parent = document.getElementById('list-container');
     
     // Remove any previous content
     parent.innerHTML = '';
