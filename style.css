@@ -96,6 +96,12 @@ ul li {
     cursor: pointer;
 }
 
+.fa-pencil-alt,
+.fa-check-square,
+.fa-trash-alt {
+    pointer-events: none;
+}
+
 
 
 @media screen and (max-width: 581px) {

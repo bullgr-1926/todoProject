@@ -25,6 +25,13 @@ const newTodo = (task) => {
     todoList.unshift(newTodo);
 }
 
+// Save the changes from the list to the array
+const updateArray = () => {
+  let parent = document.getElementById('list-group');
+  let listItems = parent.getElementsByTagName("li");
+  console.log(listItems);
+}
+
 // Create the list on html
 const createList = () => {
     // We use the div with class list
@@ -33,16 +40,26 @@ const createList = () => {
     // Remove any previous content
     parent.innerHTML = '';
 
+    // Create the ul tags
     let ul = document.createElement('ul');
+    ul.id = 'list-group';
     parent.appendChild(ul);
 
+    // For each item in array, create a row with the string
+    // and the check, delete buttons on a li tag
     todoList.forEach((item) => {
-      let li = document.createElement('li');
-      ul.appendChild(li);
-      let div = document.createElement('div');
-      div.className = 'todo-list';
-      document.body.appendChild(div)
-      li.innerHTML = item.task;
+      // Checked or unchecked icon correspont the boolean value in array
+      let checkIcon = '';
+      item.done ? checkIcon = 'fa-check-square' : checkIcon = 'fa-square';
+
+      let content = `<div class= "row">
+        <li class="list-group-item col-xs-4 col-sm-6 col-md-6">${item.task}</li>
+        <button class="edit col-xs-2 col-sm-2 col-md-2 btn"><i class="fas fa-pencil-alt pen"></i></button>
+        <button class="checked col-xs-2 col-sm-2 col-md-2 btn"><i class="far ${checkIcon}"></i></button>
+        <button class="deleted col-xs-2 col-sm-2 col-md-2 btn"><i class="far fa-trash-alt"></i></button>
+      </div>`;
+      
+      ul.innerHTML += content;
     });
 }
 
@@ -59,7 +76,7 @@ const getInput = (input) => {
   }
 }
 
-// Create submit event listener when the user
+// Create a submit event listener when the user
 // press enter on the form input field
 const todoForm = document.querySelector('.todoForm');
 todoForm.addEventListener('submit', event => {
@@ -70,7 +87,7 @@ todoForm.addEventListener('submit', event => {
   getInput(input);  
 });
 
-// Create submit event listener when the user
+// Create a submit event listener when the user
 // press enter on the submit button
 const todoAddButton = document.querySelector('.addButton');
 todoAddButton.addEventListener('click', event => {
@@ -79,6 +96,44 @@ todoAddButton.addEventListener('click', event => {
 
   // Get the input field
   getInput(input);  
+});
+
+
+//Create a click event on the list and check what the user clicked on
+const todoListClicked = document.querySelector('.todo-container');
+todoListClicked.addEventListener('click', event => {
+  event.preventDefault();
+  
+  console.log(event.target);
+
+  // If the user clicked on edit button, get the actual text, prompt a window,
+  // edit the string and update the list item with the edited string
+  if (event.target.className === 'edit col-xs-2 col-sm-2 col-md-2 btn') {
+    let actualTask = event.target.previousElementSibling.innerHTML;
+    let editedTask = prompt('Edit the task', actualTask.trim());
+    event.target.previousElementSibling.innerHTML = editedTask;
+  }
+
+  // If the user clicked on checked button.....
+  // Todo: update on create list function the checked button correspond the value on array
+  if (event.target.className === 'checked col-xs-2 col-sm-2 col-md-2 btn') {
+    let toggleCheckIcon = event.target.firstElementChild.className;
+    
+    // Toggle the check icon
+    toggleCheckIcon === 'far fa-square' ? toggleCheckIcon = 'far fa-check-square' : toggleCheckIcon = 'far fa-square';
+
+    // Update the check icon
+    event.target.firstElementChild.className = toggleCheckIcon;
+  }
+
+  // if the user clicked on delete button, remove the li item from the list
+  if (event.target.className === 'deleted col-xs-2 col-sm-2 col-md-2 btn') {
+    let item = event.target.parentElement;
+    item.remove();
+  }
+
+  // Finaly save the changes from the list to the array
+  updateArray();
 });
 
 //--------------------------------------

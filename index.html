@@ -7,12 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="footer.css" />
-    <title>DoItRight</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <title>DoItRight</title>
 </head>
 
 <body>
@@ -30,12 +32,12 @@
         <a class="nav-link" href="#">myProfile</a>
         <a class="nav-link" href="#">myDoItRight</a>
         <a class="nav-link" href="#">sharedDoItRight</a>
-    </div>
+      </div>
     </div>
   </nav>
 
   <!--Navbar ends here-->
-<div class="container">
+  <div class="container">
     <div class="row  welcome-text">
       <h1 class="col-12 ">my DoItRight</h1>
     </div>
@@ -46,72 +48,60 @@
           <input type="text" name="create-task" class="todoInput col-10" placeholder="Add a task to your DoItRight">
         </form>
       </div>
-        <div class="col-xs-2 col-sm-4 col-md-4" >
-          <button class="addButton col-4" type="submit"><img src="adding.png"></button>
-        </div>
-   </div> 
-
-   <!-- The todo-list starts here-->
-   <div class="row todo-text">
-     <div class="col-12">
-       <h2>my-To-Do</h2>
-       
-     <div class="row">
-       <div class="col-12 todo-container">
-         <div id="list-container"></div>
-       </div>
+      <div class="col-xs-2 col-sm-4 col-md-4">
+        <button class="addButton col-4" type="submit"><img src="adding.png"></button>
       </div>
     </div>
 
-    <div class="row">
-      <div class="todo-container">
-        <div id="list"></div>
-        <ul class="list-group">
-          <div class= "row">
-            <li class="list-group-item col-xs-4 col-sm-6 col-md-6">Pay the rent</li>
-            <button class="edit col-xs-2 col-sm-2 col-md-2 btn"><i class="fas fa-pencil-alt pen"></i></button>
-            <button class="checked col-xs-2 col-sm-2 col-md-2  btn"><i class="far fa-check-square"></i></button>
-            <button class="deleted  col-xs-2 col-sm-2 col-md-2 btn"><i class="far fa-trash-alt"></i></button>
+    <!-- The todo-list starts here-->
+    <div class="row todo-text">
+      <div class="col-12">
+        <h2>my-To-Do</h2>
+
+        <div class="row">
+          <div class="todo-container">
+            <div id="list-container">
+              <!-- todo-list will be implementet here from js code -->
+            </div>
+
           </div>
-        </ul>
+        </div>
 
-</div>
-</div>
-
-</div>
-  <!--Footer section-->
-
- </div> 
- </div>
-
- <footer class="footer row col-12 ">
-      <div class="col-12 aboutContact">
-        <a class="col-4 footLink" href="#">About</a>
-        <a class="col-4 footLink" href="#">Contact</a>
-        <a class="col-4 footLink" href="#">Team</a>
       </div>
+      <!--Footer section-->
+
+    </div>
+  </div>
+
+  <footer class="footer row col-12 ">
+    <div class="col-12 aboutContact">
+      <a class="col-4 footLink" href="#">About</a>
+      <a class="col-4 footLink" href="#">Contact</a>
+      <a class="col-4 footLink" href="#">Team</a>
+    </div>
 
     <p class="col-12">© 2021 DoItRight Inc. WBS Coding School. All Rights Reserved.</p>
   </footer>
-  
 
 
-     <!-- <script src="app.js"></script> -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-        crossorigin="anonymous"></script>
 
-      <!--Javascript todo code -->
-      <script src="src/todo.js"></script>
+  <!-- <script src="app.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
 
-  </body>
-  </html>
+  <!--Javascript todo code -->
+  <script src="src/todo.js"></script>
+
+</body>
+
+</html>
