@@ -1,0 +1,52 @@
+.list-group-item{
+
+    margin: 0px, 0px, 110px;
+    padding: 0;
+    font-size: 1rem;
+    font-family: Bradley Hand, cursive;
+    border-radius: 3px;
+    display:flex;
+}
+
+
+
+.btn {
+    background-color: DodgerBlue; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: RoyalBlue;
+  }
+
+    .task{
+        width: 90%;
+        background-color: rgba(255, 255, 255, 0.3);
+        
+        padding: 10px;
+        margin: 16px 0;
+        overflow: hidden;
+        display: block;
+
+
+    }
+
+    .task i{
+        float: right;
+        margin-left: 20px;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    i.fas.fa-pencil{
+
+        width: 0%;
+    }
+   
+
+ 
