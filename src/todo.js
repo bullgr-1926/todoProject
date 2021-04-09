@@ -39,6 +39,9 @@ const createList = () => {
     todoList.forEach((item) => {
       let li = document.createElement('li');
       ul.appendChild(li);
+      let div = document.createElement('div');
+      div.className = 'todo-list';
+      document.body.appendChild(div)
       li.innerHTML = item.task;
     });
 }
