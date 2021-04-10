@@ -1,7 +1,7 @@
 // Todo object
-function Todo(task) {
+function Todo(task, done) {
     this.task = task;
-    this.done = false;
+    this.done = done;
 }
 
 // Get the todo data from local storage if any
@@ -20,16 +20,47 @@ const setTodoData = () => {
 }
 
 // Create a new todo entry and unshift it to array
-const newTodo = (task) => {
-    let newTodo = new Todo(task);
+const newTodo = (task, done = false) => {
+    let newTodo = new Todo(task, done);
     todoList.unshift(newTodo);
 }
 
 // Save the changes from the list to the array
 const updateArray = () => {
+  // Get the ul content
   let parent = document.getElementById('list-group');
+
+  // Get all the li content from ul
   let listItems = parent.getElementsByTagName("li");
-  console.log(listItems);
+
+  // Empty the array first
+  todoList = [];
+
+  // Loop thru all the li contents to get the task and the check values
+  for (i = 0; i < listItems.length; i++) {
+    
+    // Get the task value
+    let taskValue = listItems[i].innerHTML;
+
+    // Go to the next two siblings to get the actual check icon value
+    let check = listItems[i].nextElementSibling.nextElementSibling.firstElementChild.className;
+
+    let checkValue = '';
+
+    console.log(check);
+
+    // Set true or false correspont the check icon
+    check === 'far fa-check-square' ? checkValue = true : checkValue = false;
+
+    console.log(checkValue);
+
+    // Create a new todo object and add it to the array
+    let newTodo = new Todo(taskValue, checkValue);
+    todoList.push(newTodo);
+
+    // Save the array to the local storage
+    setTodoData();
+  }
 }
 
 // Create the list on html
@@ -104,8 +135,6 @@ const todoListClicked = document.querySelector('.todo-container');
 todoListClicked.addEventListener('click', event => {
   event.preventDefault();
   
-  console.log(event.target);
-
   // If the user clicked on edit button, get the actual text, prompt a window,
   // edit the string and update the list item with the edited string
   if (event.target.className === 'edit col-xs-2 col-sm-2 col-md-2 btn') {
@@ -114,8 +143,7 @@ todoListClicked.addEventListener('click', event => {
     event.target.previousElementSibling.innerHTML = editedTask;
   }
 
-  // If the user clicked on checked button.....
-  // Todo: update on create list function the checked button correspond the value on array
+  // If the user clicked on checked button, toggle the check icon
   if (event.target.className === 'checked col-xs-2 col-sm-2 col-md-2 btn') {
     let toggleCheckIcon = event.target.firstElementChild.className;
     
@@ -146,39 +174,3 @@ getTodoData();
 
 // Create the list on html
 createList();
-
-
-
-
-// Set the todo data in local storage (fires up by event)
-//setTodoData();
-
-// Create a new todo entry (fires up by event)
-//newTodo("String from html input field");
-
-
-
-
-
-// ---------------- Example entries ----------------
-// Create a new todo entry
-//newTodo("String from imput field");
-
-// Delay to avoid get the same date
-//for (let i = 0; i < 200; i++) {
-//    console.log(i);
-//}
-
-//newTodo("Skata melata");
-
-// Delay to avoid get the same date
-//for (let i = 0; i < 200; i++) {
-//    console.log(i);
-//}
-
-//newTodo("Arxidia kopanista");
-
-//setTodoData();
-// ---------------- Example entries ----------------
-
-console.log(todoList);
